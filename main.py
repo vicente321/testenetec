@@ -23,12 +23,12 @@ except KeyError:
     #logger.info("Token not available!")
     #raise
 
-
+logger.info(__name__)
 if __name__ == "__main__":
     logger.info(f"Token value: {SOME_SECRET}")
 
-    r = requests.get('https://weather.talkpython.fm/api/weather/?city=Berlin&country=DE')
+    r = requests.get('https://weather.talkpython.fm/api/weather/?city=SaoPaulo&country=BR')
     if r.status_code == 200:
         data = r.json()
         temperature = data["forecast"]["temp"]
-        logger.info(f'temperatura em berlim: {temperature}')
+        logger.info(f'temperatura em Sao Paulo:')
